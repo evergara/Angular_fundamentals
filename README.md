@@ -64,3 +64,43 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - l establecer una propiedad de elemento en un valor de datos que no sea una cadena, debe usar “Property Binding”.
 
 - Se recomienda comprender los “Event binding” para entender el flujo de datos de la aplicacion y como este interactua con “interpolation” y “Property Binding”.
+
+
+## Event Binding
+- El Event Binding le permite escuchar y responder a las acciones del usuario, como pulsaciones de teclas, movimientos del mouse, clics y toques (Atributos HTML y propiedades DOM).
+
+- Para vincular un elemento html a un evento, debemos indicar el nombre del evento entre paréntesis a la izquierda de un signo igual y el nombre de una funcion entre comillas a la derecha, recuerda indicar que se trata de una funcion con los parentecis “nameFunction()” .
+ ```
+   <button (click)="onSave()">Save</button>
+ ```
+ - Usar () en el template html es sinonimo de llamar “addEventListener()”
+
+ - Podemos realizar eventos personalizados con “EventEmitter”
+
+ - Podemos llamar multiples eventos de la siguiente forma
+  ```
+     <button (click)="clickEvent()" (mouseenter)="mouseEnterEvent()">Click Me</button>
+  ```
+  - Podemos determinar un objetivo de evento de la siguiente manera
+  
+ ```
+    <button (click)="handleClick($event)">Save</button>
+ ```
+- los eventos del lado del controlador se pueden interpretar de esta forma 
+
+```
+  increaseAge() {
+    this.person.age += 1;
+  }
+
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop);
+  }
+
+  changeName(event: Event) {
+    const element = event.target as HTMLInputElement;
+    this.person.name = element.value;
+  }
+  
+ ```

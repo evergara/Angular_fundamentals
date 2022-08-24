@@ -1,0 +1,18 @@
+<h2>event binding</h2>
+<button [disabled]="btnDisabled">Enviar</button>
+<button [disabled]="btnDisabled">Reset</button>
+<input type="text" (keyup.enter)="saveName($event)" [value]="name" />
+<button [disabled]="btnDisabled" (click)="incrementarProgress()">
+  Incrementar++
+</button>
+<button [disabled]="btnDisabled" (click)="decrementarProgress()">
+  Decrementar--
+</button>
+
+<button (click)="toggleButtom()">Desactivar</button>
+<progress max="100" [value]="countProgress"></progress>
+
+<h3>event binding desde el template</h3>
+<h3>event binding desde componente</h3>
+<p>clic en el name {{ countClick }}</p>
+<app-hello [name]="parentNama" (clickInName)="onNameHello($event)"></app-hello>
