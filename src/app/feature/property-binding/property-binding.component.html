@@ -1,0 +1,14 @@
+<h2>Usando property binding</h2>
+
+<h3>property Binding de atributos Html</h3>
+<progress max="100" [value]="progress"></progress>
+<button [disabled]="isActive">Enviar</button>
+<input type="tel" [value]="telephone" />
+
+<h3>property Binding de Componentes</h3>
+
+<app-saludar [name]="nameGreet"></app-saludar>
+<h4>propiciamos la reutilizacion de componentes</h4>
+<app-saludar [name]="'Duvian'"></app-saludar>
+<app-saludar [name]="'Davier'"></app-saludar>
+<app-saludar [name]="'Duvier'"></app-saludar>
