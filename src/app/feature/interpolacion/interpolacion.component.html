@@ -1,0 +1,11 @@
+<p>
+  Ineterpolación de un texro: {{ "Esto fue una interpolacion" | uppercase }}
+</p>
+<p>Ineterpolación de operaciones : 1 + 5 = {{ 1 + 5 }}</p>
+<p>Ineterpolación de propiedad del componente : {{ title }}</p>
+<p>Ineterpolación de propiedad de un objeto : {{ person.name }}</p>
+<p>
+  Ineterpolación de propiedad de un objeto y repitiendolo en en template :
+  {{ person.name.repeat(3) }} y la edad : {{ person.age }}
+</p>
+<img src="{{ person.avatar }}" alt="" />
