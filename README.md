@@ -104,3 +104,52 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   }
   
  ```
+
+ ## Data binding con ngModel
+ - El atributo ngModel permite el intercambio de datos de forma bidireccional entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente. ngModel usar tanto los corchetes [] como los paréntesis (). De esta manera, se vuelve bidireccional el intercambio de datos. Si no quieres la bidirección, solo colocamos los corchetes [ngModel] para que la comunicación sea unidireccional.
+  
+```
+  <input [(ngModel)]="name">
+```
+
+- Importante recalcar que para hacer uso de ngModel debemos importar el **FormModule** y habilitar el mismo en app.module.ts, De esta manera puedes importar el módulo FormsModule desde @angular/forms y agregarlo a imports para emplear la propiedad [(ngModel)].
+
+```
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [ ... ],
+  imports: [
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [ ... ]
+})
+export class AppModule { }
+```
+
+- Podemos personalizar las validaciones que deberia tener un campo o el mismo formulario, Aqui utilizamos las **variables de referencia o template references** (las que tienen el signo #) y debemos indicar que la variable debera tomar el valor del ngModel **#nameInput="ngModel" **
+
+```
+  Delaracion <form #itemForm="ngForm"  uso  <div [hidden]="!itemForm.form.valid">
+  Delaracion input type="text" required #nameImput="ngModel" [(ngModel)]="inputName" />  uso   <button *ngIf="nameImput.valid" (click)="AddName()">Add Name</button>
+
+  Delaracion 
+    <app-hello
+      #varRefTemHelloComponent
+      [name]="name"
+      (emitClickName)="clickName()"
+    ></app-hello> 
+  uso  
+  <div>writing '{{ varRefTemHelloComponent.inputName }}' in HelloComponent</div>
+  <ul>
+  <li *ngFor="let item of varRefTemHelloComponent.names">{{ item }}</li>
+</ul>
+
+```
+
+- Se pueden realizar las validaciones que normalmente encontramos en html y con pattern podemos especificar una comprobacion como exprecion regular
+
+- Podemos tener un flujo de datos unidireccional con [] o bidireccional con [()] Acepta inputs
+
+- Cuando se utiliza el ngModel sin la etiqueta <form> es necesario proporcionar un “nombre de atributo” de manera que el control pueda ser registrado en el formulario padre bajo ese nombre.

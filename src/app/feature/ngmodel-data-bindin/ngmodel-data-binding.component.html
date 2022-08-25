@@ -1,0 +1,25 @@
+<h2>Usando NgModel - Data binding con ngModel</h2>
+<p>
+  haz cliqueado el nombre: <span>{{ countClickName }}</span>
+</p>
+<div>writing '{{ varRefTemHelloComponent.inputName }}' in HelloComponent</div>
+<br />
+<app-hello
+  #varRefTemHelloComponent
+  [name]="name"
+  (emitClickName)="clickName()"
+></app-hello>
+
+<ul>
+  <li *ngFor="let item of varRefTemHelloComponent.names">{{ item }}</li>
+</ul>
+
+<input
+  type="number"
+  max="25"
+  min="5"
+  required
+  #inputAge="ngModel"
+  [(ngModel)]="age"
+/>
+<p>{{ inputAge.valid }}</p>

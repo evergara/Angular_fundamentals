@@ -1,0 +1,6 @@
+<div>
+  <input type="text" required #nameImput="ngModel" [(ngModel)]="inputName" />
+  <button *ngIf="nameImput.valid" (click)="AddName()">Add Name</button>
+</div>
+
+<p (click)="clickName()">Hello, yo soy {{ name }}!!!</p>
