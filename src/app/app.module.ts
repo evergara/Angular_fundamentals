@@ -10,6 +10,7 @@ import { PropertyBindingModule } from './feature/property-binding/property-bindi
 import { EventBindingModule } from './feature/event-binding/event-binding.module';
 import { NgmodelDataBindinModule } from './feature/ngmodel-data-bindin/ngmodel-data-bindin.module';
 import { ClassBindingModule } from './feature/class-binding/class-binding.module';
+import { DirectivaModule } from './feature/directiva/directiva.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { ClassBindingModule } from './feature/class-binding/class-binding.module
     EventBindingModule,
     NgmodelDataBindinModule,
     ClassBindingModule,
+    DirectivaModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
