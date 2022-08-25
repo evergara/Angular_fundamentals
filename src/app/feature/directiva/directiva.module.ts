@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { PersonComponent } from './components/person/person.component';
 import { DirectivaComponent } from './directiva.component';
+import { PersonsComponent } from './components/persons/persons.component';
+import { PersonaddComponent } from './components/personadd/personadd.component';
 
 @NgModule({
-  declarations: [PersonComponent, DirectivaComponent],
+  declarations: [PersonComponent, DirectivaComponent, PersonsComponent, PersonaddComponent],
   exports: [DirectivaComponent],
   imports: [CommonModule, FormsModule],
 })
