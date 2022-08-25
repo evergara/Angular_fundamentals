@@ -9,6 +9,7 @@ import { InterpolacionModule } from './feature/interpolacion/interpolacion.modul
 import { PropertyBindingModule } from './feature/property-binding/property-binding.module';
 import { EventBindingModule } from './feature/event-binding/event-binding.module';
 import { NgmodelDataBindinModule } from './feature/ngmodel-data-bindin/ngmodel-data-bindin.module';
+import { ClassBindingModule } from './feature/class-binding/class-binding.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { NgmodelDataBindinModule } from './feature/ngmodel-data-bindin/ngmodel-d
     PropertyBindingModule,
     EventBindingModule,
     NgmodelDataBindinModule,
+    ClassBindingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

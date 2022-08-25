@@ -1,0 +1,17 @@
+<div>
+  <input
+    type="text"
+    required
+    #VarRefTempinputName="ngModel"
+    [(ngModel)]="inputName"
+  />
+  <input
+    *ngIf="VarRefTempinputName.valid"
+    type="button"
+    (click)="addName()"
+    value="Save"
+  />
+</div>
+<p (click)="handlerClickInName()">
+  <span>Hola yo soy {{ name }}!!!</span>
+</p>

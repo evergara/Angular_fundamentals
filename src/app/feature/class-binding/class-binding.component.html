@@ -1,0 +1,40 @@
+<h2>Class Binding: [class.laclase]="Condicion"</h2>
+
+<p>
+  Has dado click en el nombre: <span>{{ countClickInName }}</span>
+</p>
+
+<div [class.hidden]="varRefHelloComponent.inputName.length === 0">
+  <p>writting name {{ varRefHelloComponent.inputName }} en HelloComponent</p>
+</div>
+
+<app-hello
+  #varRefHelloComponent
+  [name]="name"
+  (eventEmittClickInName)="clickName()"
+></app-hello>
+
+<div *ngIf="varRefHelloComponent.names.length > 0">
+  <h2>Style Binding: [style.Propieda.medida]="Condicion"</h2>
+  <ul>
+    <li
+      [style.list-style-type]="name != '' ? 'none' : ''"
+      *ngFor="let ArrayName of varRefHelloComponent.names; index as i"
+    >
+      <p>
+        <span
+          [style.color]="
+            ArrayName.toUpperCase().includes('color'.toUpperCase())
+              ? 'red'
+              : 'black'
+          "
+          [style.font-size.rem]="
+            ArrayName.toUpperCase().includes('color'.toUpperCase()) ? '3' : '1'
+          "
+          >{{ i }} -
+        </span>
+        {{ ArrayName | uppercase }}
+      </p>
+    </li>
+  </ul>
+</div>
