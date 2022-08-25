@@ -14,6 +14,10 @@
   (eventEmittClickInName)="clickName()"
 ></app-hello>
 
+<app-hello [name]="name" (eventEmittClickInName)="clickName()"></app-hello>
+
+<app-hello [name]="name" (eventEmittClickInName)="clickName()"></app-hello>
+
 <div *ngIf="varRefHelloComponent.names.length > 0">
   <h2>Style Binding: [style.Propieda.medida]="Condicion"</h2>
   <ul>
