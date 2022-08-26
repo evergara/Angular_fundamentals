@@ -1,8 +1,19 @@
 <div>
-  Nombre:
-  <h5>{{ person.name }}</h5>
-  Apellido:
-  <h6>{{ person.lastName }}</h6>
-  Edad: <span>{{ person.age }}</span>
-  <button (click)="deletePerson()">Elininar</button>
+  <p>
+    Nombre: <span>{{ person.name }}</span>
+  </p>
+
+  <p [ngSwitch]="person.age">
+    Apellido: <span>{{ person.lastName }}</span>
+    <i *ngSwitchCase="18"> Mayor de edad </i>
+    <i *ngSwitchCase="14"> Adolecente</i>
+    <i *ngSwitchCase="10"> Infante</i>
+    <i *ngSwitchCase="7"> Niño</i>
+    <i *ngSwitchDefault> Edad no clasificada</i>
+  </p>
+  <p>
+    Edad: <span>{{ person.age }}</span>
+  </p>
+  <br />
+  <button *ngIf="person.age < 18" (click)="deletePerson()">Elininar</button>
 </div>

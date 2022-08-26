@@ -1,1 +1,42 @@
-<p>personadd works!</p>
+<div>
+  <p>
+    Nombre:
+    <input
+      type="text"
+      required
+      #vFefTempInputName="ngModel"
+      [(ngModel)]="person.name"
+    />
+  </p>
+
+  <p>
+    Apellido:
+    <input
+      type="text"
+      required
+      #vFefTempInputLastName="ngModel"
+      [(ngModel)]="person.lastName"
+    />
+  </p>
+  <p>
+    Edad:
+    <input
+      type="number"
+      min="0"
+      max="50"
+      #vFefTempInputAge="ngModel"
+      [(ngModel)]="person.age"
+    />
+  </p>
+  <br />
+  <button
+    *ngIf="
+      vFefTempInputAge.valid &&
+      vFefTempInputName.valid &&
+      vFefTempInputLastName.valid
+    "
+    (click)="addPerson()"
+  >
+    Add
+  </button>
+</div>

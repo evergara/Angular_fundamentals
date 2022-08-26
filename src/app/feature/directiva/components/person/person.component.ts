@@ -8,16 +8,18 @@ import { Person } from '../../model/person';
 })
 export class PersonComponent implements OnInit {
   @Input() person: Person;
+  @Input() index: number;
   @Output() eventDeletePerson: EventEmitter<number> =
     new EventEmitter<number>();
 
   constructor() {
     this.person = {} as Person;
+    this.index = 0;
   }
 
   ngOnInit(): void {}
 
   deletePerson(): void {
-    this.eventDeletePerson.emit(this.person.uid);
+    this.eventDeletePerson.emit(this.index);
   }
 }

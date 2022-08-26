@@ -1,1 +1,25 @@
-<p>persons works!</p>
+<ul>
+  <ng-container *ngFor="let person of persons; let i = index">
+    <li [style.list-style]="person.uid > 0 ? 'none' : ''">
+      <app-person
+        [person]="person"
+        [index]="i"
+        (eventDeletePerson)="deletePerson($event)"
+      ></app-person>
+    </li>
+  </ng-container>
+</ul>
+
+<!-- <div *ngIf="persons.length <= 5">
+  <app-personadd (eventPerson)="savePerson($event)"></app-personadd>
+</div>
+ -->
+
+<div [ngSwitch]="persons.length">
+  <div *ngSwitchCase="5">
+    <p>You can't add more person</p>
+  </div>
+  <div *ngSwitchDefault>
+    <app-personadd (eventPerson)="savePerson($event)"></app-personadd>
+  </div>
+</div>
