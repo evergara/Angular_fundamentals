@@ -1,6 +1,13 @@
 <h2>Usando directivas</h2>
 
 <h3>Usando directivas de atributos: ngModel, ngClass, ngStyle</h3>
+
+<p>
+  Cuantos elementos hay en en el formArrayName="control"
+  <span [ngClass]="UpdateNameClass(tempRefComponentPerson.persons.length)">
+    {{ tempRefComponentPerson.persons.length }}</span
+  >
+</p>
 <h3>Usando directivas de estructurales: *ngIf, *ngFor, ngswitch,</h3>
 <h4>
   las directivas estructurales se apoyan muchos de estos elementos ng-container,
@@ -8,4 +15,4 @@
   (directiva)'
 </h4>
 
-<app-persons></app-persons>
+<app-persons #tempRefComponentPerson></app-persons>
